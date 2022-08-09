@@ -13,12 +13,11 @@ function Portfolio() {
     const target = evt.target;
     const txtContent = target.textContent;
     if (state !== txtContent) {
+      let filterContent = txtContent === "All"
+        ? cardList
+        : cardList.filter(elem => elem.category === txtContent)
       setState(txtContent)
-      setCardListData(cardList.filter(elem => elem.category === txtContent))
-    }
-
-    if (txtContent === "All") {
-      setCardListData(cardList)
+      setCardListData(filterContent)
     }
   }
 
