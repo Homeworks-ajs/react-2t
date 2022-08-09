@@ -1,12 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import ListView from '../list-view/ListView'
+import { products } from './products'
 
-function Store(props) {
+
+function Store() {
   return (
-    <div>Store</div>
+    <div className='container'>
+      <ListView products={products}/>
+    </div>
+
   )
 }
-
-Store.propTypes = {}
 
 export default Store
