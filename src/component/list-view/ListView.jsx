@@ -1,15 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ShopItem from '../shop-item/ShopItem'
-import shortid from 'shortid'
 
-function ListView(props) {
-  const {products} = props;
-  const productsWithId = products.map(el => Object.assign(el, {id: shortid.generate()}));
-
+function ListView({products}) {
   return (
     <div className="row">
-      {productsWithId.map(elem => <ShopItem product={elem} key={elem.id}/>)}
+      {products.map(elem => <ShopItem product={elem} key={elem.id}/>)}
     </div>
   )
 }

@@ -4,11 +4,14 @@ import CardsView from '../cards-view/CardsView'
 import IconSwitch from '../icon-switch/IconSwitch'
 import ListView from '../list-view/ListView'
 import { products } from './products'
+import shortid from 'shortid'
 
 const switchIcon = {
   list: "view_list",
   module: "view_module"
 }
+
+const productsWithKey = products.map(el => Object.assign(el, {id: shortid.generate()}));
 
 function Store() {
   const [view, setView] = useState(switchIcon.module)
@@ -27,8 +30,8 @@ function Store() {
         <IconSwitch view={view} onSwitchHandler={switchHandler}/>
       </div>
       {view === switchIcon.list 
-      ? <ListView products={products}/> 
-      : <CardsView products={products}/>}
+      ? <ListView products={productsWithKey}/> 
+      : <CardsView products={productsWithKey}/>}
     </div>
   )
 }
