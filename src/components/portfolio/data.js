@@ -1,4 +1,4 @@
-export const cardList = [{
+const cardList = [{
     img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/mon.jpg",
     category: "Business Cards"
   }, {
@@ -50,3 +50,7 @@ export const cardList = [{
     img: "https://raw.githubusercontent.com/netology-code/ra16-homeworks/master/events-state/filter/img/place200x290_3.png",
     category: "Flayers"
   }]
+
+const filters = ["All", "Websites", "Flayers", "Business Cards"];
+
+export {cardList, filters};

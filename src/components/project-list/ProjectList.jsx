@@ -1,22 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import shortid from 'shortid';
+import './project-list.css';
 
-function ProjectList(props) {
-  const { projectList } = props;
-
-  const projectListWithKey = projectList.map(el => ({
-    img: el.img,
-    category: el.category,
-    id: shortid.generate()
-  }))
-
+function ProjectList({ projectList }) {
   return (
     <>
-      {projectListWithKey.map(elem => {
-        return (<div style={{ maxWidth: "400px", margin: "5px", padding: 0, display: 'inline-block'}} key={elem.id}>
-            <img src={elem.img} className="card-img-top" alt={elem.category}/>
-          </div>
+      {projectList.map(elem => {
+        return (
+          <img className="portfolio-item" src={elem.img} alt={elem.category} key={elem.id} />
         )
       })}
     </>
