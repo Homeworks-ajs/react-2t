@@ -1,0 +1,10 @@
+.card-view {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  height: 300px;
+  width: 250px;
+}

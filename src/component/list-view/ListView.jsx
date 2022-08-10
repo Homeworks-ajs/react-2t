@@ -5,11 +5,11 @@ import shortid from 'shortid'
 
 function ListView(props) {
   const {products} = props;
-  const productsWithId = products.map(el => el);
+  const productsWithId = products.map(el => Object.assign(el, {id: shortid.generate()}));
 
   return (
     <div className="row">
-      {productsWithId.map(elem => <ShopItem product={elem} key={elem.key}/>)}
+      {productsWithId.map(elem => <ShopItem product={elem} key={elem.id}/>)}
     </div>
   )
 }
